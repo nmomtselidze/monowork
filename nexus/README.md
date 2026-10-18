@@ -54,11 +54,19 @@ make install
 ```bash
 # Run a workflow
 ./multi-agent-graph ml --parallel
+./multi-agent-graph etl --parallel
+./multi-agent-graph cicd --parallel
+./multi-agent-graph book-flight --parallel
 
 # Or use Makefile
 make run-ml
-```
+make run-etl
+make run-cicd
+make run-book-flight
 
+# Or run all
+make run-all 
+```
 ## 🤖 Core Components
 
 ### Graph Engine
