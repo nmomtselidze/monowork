@@ -1,0 +1,13 @@
+
+# Python bytecode
+*.pyc
+**/__pycache__/
+
+# Local SQLite databases
+*.db
+*.sqlite3
+
+# Large archives (GitHub rejects files over 100MB)
+*.zip
+*.pt
+small-disease-lm/data/

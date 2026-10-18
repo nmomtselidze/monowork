@@ -1,0 +1,16 @@
+Error sending request: Post "https://api-inference.huggingface.co/models/HuggingFaceTB/SmolLM2-1.7B-Instruct": dial tcp: lookup api-inference.huggingface.co: no such host
+
+
+--- Demo Mode: Fallback Response ---
+<|im_start|>system
+You are a medical AI assistant. Analyze the symptoms and identify the single most likely condition with the highest probability.
+<|im_end|>
+<|im_start|>user
+I have a high fever, dry cough, and severe fatigue.
+<|im_end|>
+<|im_start|>assistant
+Based on the symptoms you've provided, the most likely condition is:
+
+Influenza (Flu): This is a viral infection that causes symptoms like fever, cough, and fatigue. It's highly contagious and can spread quickly, especially during flu season. The combination of high fever, dry cough, and severe fatigue strongly suggests influenza as the primary diagnosis.
+
+Please remember that this is just a potential condition and it's important to consult with a healthcare professional for a proper diagnosis.

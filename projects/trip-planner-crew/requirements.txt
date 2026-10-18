@@ -1,0 +1,8 @@
+crewai 
+langchain 
+langchain-google-genai 
+google-generativeai 
+python-dotenv 
+litellm 
+unstructured
+

@@ -1,0 +1,26 @@
+name: Nexus Go Tests
+
+on:
+  push:
+    paths:
+      - 'nexus/**'
+  pull_request:
+    paths:
+      - 'nexus/**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Run Tests
+        run: |
+          cd nexus
+          go test -v ./...

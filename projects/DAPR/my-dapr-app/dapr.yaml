@@ -1,0 +1,12 @@
+version: 1
+common:
+  resourcesPath: ./components
+apps:
+  - appID: order-processor
+    appDirPath: ./processor
+    appPort: 8001
+    command: ["python3", "order_processor.py"]
+
+  - appID: checkout
+    appDirPath: ./checkout
+    command: ["python3", "checkout.py"]

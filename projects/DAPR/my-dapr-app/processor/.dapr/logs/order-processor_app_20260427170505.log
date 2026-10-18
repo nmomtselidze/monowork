@@ -1,0 +1,7 @@
+== APP - order-processor == INFO:     Started server process [50598]
+== APP - order-processor == INFO:     Waiting for application startup.
+== APP - order-processor == INFO:     Application startup complete.
+== APP - order-processor == ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8001): address already in use
+== APP - order-processor == INFO:     Waiting for application shutdown.
+== APP - order-processor == INFO:     Application shutdown complete.
+The App process exited with error code: exit status 1

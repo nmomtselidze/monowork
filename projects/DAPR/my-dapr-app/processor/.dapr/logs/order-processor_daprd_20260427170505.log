@@ -1,0 +1,60 @@
+Starting Dapr with id order-processor. HTTP Port: 34323. gRPC Port: 39739
+Updating metadata for cliPID: 50580
+time="2026-04-27T17:05:05.322874998+04:00" level=info msg="Starting Dapr Runtime -- version 1.17.5 -- commit 3974797d4325124650f3a6c9bf220ba327f84e6c" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.322906995+04:00" level=info msg="Log level set to: info" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.323095833+04:00" level=warning msg="mTLS is disabled. Skipping certificate request and tls validation" app_id=order-processor instance=user scope=dapr.runtime.security type=log ver=1.17.5
+time="2026-04-27T17:05:05.323566446+04:00" level=info msg="metric spec: {\"enabled\":true}" app_id=order-processor instance=user scope=dapr.runtime.diagnostics type=log ver=1.17.5
+time="2026-04-27T17:05:05.323619002+04:00" level=info msg="Using default latency distribution buckets: [1 2 3 4 5 6 8 10 13 16 20 25 30 40 50 65 80 100 130 160 200 250 300 400 500 650 800 1000 2000 5000 10000 20000 50000 100000]" app_id=order-processor instance=user scope=dapr.runtime.diagnostics type=log ver=1.17.5
+time="2026-04-27T17:05:05.323807374+04:00" level=warning msg="The default value for 'spec.metric.http.increasedCardinality' will change to 'false' in Dapr 1.15 or later" app_id=order-processor instance=user scope=dapr.runtime.diagnostics type=log ver=1.17.5
+time="2026-04-27T17:05:05.325723312+04:00" level=info msg="metrics server started on 0.0.0.0:38997/" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.326012505+04:00" level=info msg="standalone mode configured" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.326032887+04:00" level=info msg="app id: order-processor" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.326146625+04:00" level=info msg="Dapr trace sampler initialized: ParentBased{root:AlwaysOnSampler,remoteParentSampled:AlwaysOnSampler,remoteParentNotSampled:AlwaysOffSampler,localParentSampled:AlwaysOnSampler,localParentNotSampled:AlwaysOffSampler}" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.32731154+04:00" level=info msg="local service entry announced: order-processor -> 127.0.0.1:37805" app_id=order-processor component="nr (mdns/v1)" instance=user scope=dapr.contrib type=log ver=1.17.5
+time="2026-04-27T17:05:05.32744071+04:00" level=info msg="Initialized name resolution to mdns" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.327562822+04:00" level=info msg="Loading components…" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.329252383+04:00" level=info msg="Waiting for all outstanding components to be processed…" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.331417444+04:00" level=info msg="Connected and received scheduler hosts addresses: [localhost:50006]" app_id=order-processor instance=user scope=dapr.runtime.scheduler.watchhosts type=log ver=1.17.5
+time="2026-04-27T17:05:05.33169739+04:00" level=info msg="Scheduler client initialized for address: localhost:50006" app_id=order-processor instance=user scope=dapr.runtime.scheduler.clients type=log ver=1.17.5
+time="2026-04-27T17:05:05.331722621+04:00" level=info msg="Scheduler clients initialized" app_id=order-processor instance=user scope=dapr.runtime.scheduler.clients type=log ver=1.17.5
+time="2026-04-27T17:05:05.466802836+04:00" level=error msg="Failed to init component order-pubsub (pubsub.redis/v1): [INIT_COMPONENT_FAILURE]: initialization error occurred for order-pubsub (pubsub.redis/v1): redis streams: error connecting to redis at redis:6379: dial tcp: lookup redis on 127.0.0.53:53: server misbehaving" app_id=order-processor instance=user scope=dapr.runtime.processor type=log ver=1.17.5
+time="2026-04-27T17:05:05.466863157+04:00" level=warning msg="Error processing component, daprd will exit gracefully: process component order-pubsub error: [INIT_COMPONENT_FAILURE]: initialization error occurred for order-pubsub (pubsub.redis/v1): [INIT_COMPONENT_FAILURE]: initialization error occurred for order-pubsub (pubsub.redis/v1): redis streams: error connecting to redis at redis:6379: dial tcp: lookup redis on 127.0.0.53:53: server misbehaving" app_id=order-processor instance=user scope=dapr.runtime.processor type=log ver=1.17.5
+time="2026-04-27T17:05:05.466898212+04:00" level=info msg="All outstanding components processed" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.466919151+04:00" level=info msg="Loading endpoints…" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.467301164+04:00" level=info msg="Waiting for all outstanding http endpoints to be processed…" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.467331516+04:00" level=info msg="All outstanding http endpoints processed" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.467377843+04:00" level=info msg="Loading Declarative Subscriptions…" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.468561407+04:00" level=info msg="gRPC server listening on TCP address: :39739" app_id=order-processor instance=user scope=dapr.runtime.grpc.api type=log ver=1.17.5
+time="2026-04-27T17:05:05.468598617+04:00" level=info msg="Enabled gRPC tracing middleware" app_id=order-processor instance=user scope=dapr.runtime.grpc.api type=log ver=1.17.5
+time="2026-04-27T17:05:05.468613566+04:00" level=info msg="Enabled gRPC metrics middleware" app_id=order-processor instance=user scope=dapr.runtime.grpc.api type=log ver=1.17.5
+time="2026-04-27T17:05:05.468721176+04:00" level=info msg="Registering workflow engine for gRPC endpoint: [::]:39739" app_id=order-processor instance=user scope=dapr.runtime.grpc.api type=log ver=1.17.5
+time="2026-04-27T17:05:05.468769589+04:00" level=info msg="API gRPC server is running on port 39739" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.468817145+04:00" level=warning msg="The default value for 'spec.metric.http.increasedCardinality' will change to 'false' in Dapr 1.15 or later" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.468892759+04:00" level=info msg="Enabled max body size HTTP middleware with size 4194304 bytes" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.468910599+04:00" level=info msg="Enabled tracing HTTP middleware" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.468923182+04:00" level=info msg="Enabled metrics HTTP middleware" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.469410925+04:00" level=info msg="HTTP server listening on TCP address: :34323" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.46945615+04:00" level=info msg="HTTP server is running on port 34323" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469474005+04:00" level=info msg="The request body size parameter is: 4194304 bytes" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469557918+04:00" level=info msg="gRPC server listening on TCP address: :37805" app_id=order-processor instance=user scope=dapr.runtime.grpc.internal type=log ver=1.17.5
+time="2026-04-27T17:05:05.469590607+04:00" level=info msg="Enabled gRPC tracing middleware" app_id=order-processor instance=user scope=dapr.runtime.grpc.internal type=log ver=1.17.5
+time="2026-04-27T17:05:05.469605257+04:00" level=info msg="Enabled gRPC metrics middleware" app_id=order-processor instance=user scope=dapr.runtime.grpc.internal type=log ver=1.17.5
+time="2026-04-27T17:05:05.469689551+04:00" level=info msg="Internal gRPC server is running on :37805" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469712273+04:00" level=info msg="application protocol: http. waiting on port 8001.  This will block until the app is listening on that port." app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469773658+04:00" level=info msg="Closing HTTP server [::]:34323…" app_id=order-processor instance=user scope=dapr.runtime.http type=log ver=1.17.5
+time="2026-04-27T17:05:05.469799492+04:00" level=info msg="Dapr is shutting down" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469840417+04:00" level=info msg="Dapr runtime stopped" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+time="2026-04-27T17:05:05.469852162+04:00" level=info msg="stopping mDNS server for app id: order-processor" app_id=order-processor component="nr (mdns/v1)" instance=user scope=dapr.contrib type=log ver=1.17.5
+time="2026-04-27T17:05:05.470717713+04:00" level=fatal msg="Fatal error from runtime: process component order-pubsub error: [INIT_COMPONENT_FAILURE]: initialization error occurred for order-pubsub (pubsub.redis/v1): [INIT_COMPONENT_FAILURE]: initialization error occurred for order-pubsub (pubsub.redis/v1): redis streams: error connecting to redis at redis:6379: dial tcp: lookup redis on 127.0.0.53:53: server misbehaving" app_id=order-processor instance=user scope=dapr.runtime type=log ver=1.17.5
+The daprd process exited with error code: exit status 1
+Could not update sidecar metadata for cliPID: PUT http://127.0.0.1:34323/v1.0/metadata/cliPID giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/cliPID": dial tcp 127.0.0.1:34323: connect: connection refused
+Could not update sidecar metadata for run file path: PUT http://127.0.0.1:34323/v1.0/metadata/runTemplatePath giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/runTemplatePath": dial tcp 127.0.0.1:34323: connect: connection refused
+Could not update sidecar metadata for run template name: PUT http://127.0.0.1:34323/v1.0/metadata/runTemplateName giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/runTemplateName": dial tcp 127.0.0.1:34323: connect: connection refused
+Could not update sidecar metadata for app log file path: PUT http://127.0.0.1:34323/v1.0/metadata/appLogPath giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/appLogPath": dial tcp 127.0.0.1:34323: connect: connection refused
+Could not update sidecar metadata for dapr log file path: PUT http://127.0.0.1:34323/v1.0/metadata/daprdLogPath giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/daprdLogPath": dial tcp 127.0.0.1:34323: connect: connection refused
+Updating metadata for app command: python3 order_processor.py
+Could not update sidecar metadata for appCommand: PUT http://127.0.0.1:34323/v1.0/metadata/appCommand giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/appCommand": dial tcp 127.0.0.1:34323: connect: connection refused
+Updating metadata for appPID: 50598
+Could not update sidecar metadata for appPID: PUT http://127.0.0.1:34323/v1.0/metadata/appPID giving up after 5 attempt(s): Put "http://127.0.0.1:34323/v1.0/metadata/appPID": dial tcp 127.0.0.1:34323: connect: connection refused
+You're up and running! Dapr logs will appear here.
+
