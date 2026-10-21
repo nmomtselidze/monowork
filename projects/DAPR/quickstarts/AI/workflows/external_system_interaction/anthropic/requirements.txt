@@ -1,3 +1,0 @@
-dapr-ext-workflow
-anthropic
-uvicorn

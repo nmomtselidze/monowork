@@ -1,3 +1,0 @@
-fastapi
-uvicorn
-dapr-ext-fastapi>=1.11.0

@@ -1,3 +1,0 @@
-dapr-ext-workflow==1.18.0rc0
-google-genai
-uvicorn

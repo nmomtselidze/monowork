@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MATHEMATICAL_EXPLANATION</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="mathematical-explanation-of-trip-planner-crew">Mathematical
+Explanation of Trip-Planner-Crew</h1>
+<p>Authors: Ph.D. N.Momtselidze with AI assistance</p>
+<h2 id="overview">Overview</h2>
+<p>The Trip-Planner-Crew is a multi-agent AI system built using CrewAI
+that coordinates three specialized agents to generate comprehensive
+travel itineraries. This document explains the mathematical foundations
+and algorithms underlying the system.</p>
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="multi-agent-coordination-model">Multi-Agent Coordination
+Model</h3>
+<p>The system employs a <strong>distributed multi-agent system</strong>
+with three specialized agents:</p>
+<ol type="1">
+<li><strong>City Selection Agent</strong> (A₁)</li>
+<li><strong>Local Expert Agent</strong> (A₂)</li>
+<li><strong>Travel Concierge Agent</strong> (A₃)</li>
+</ol>
+<p>The coordination follows a <strong>sequential task execution
+pattern</strong>:</p>
+<pre><code>T₁ → T₂ → T₃</code></pre>
+<p>Where: - T₁ = identify_task (executed by A₁) - T₂ = gather_task
+(executed by A₂) - T₃ = plan_task (executed by A₃)</p>
+<h3 id="task-dependency-graph">Task Dependency Graph</h3>
+<p>The task structure forms a <strong>Directed Acyclic Graph
+(DAG)</strong>:</p>
+<pre><code>G = (V, E)
+V = {T₁, T₂, T₃}
+E = {(T₁, T₂), (T₂, T₃)}</code></pre>
+<p>This ensures that: - Task T₂ cannot start until T₁ completes - Task
+T₃ cannot start until T₂ completes - No cycles exist (acyclic property
+guarantees termination)</p>
+<h2 id="mathematical-components">Mathematical Components</h2>
+<h3 id="cost-optimization-and-budget-calculation">1. Cost Optimization
+and Budget Calculation</h3>
+<p>The Travel Concierge agent uses the CalculatorTools for budget
+optimization:</p>
+<p><strong>Budget Model:</strong></p>
+<pre><code>B_total = B_accommodation + B_transport + B_food + B_miscellaneous</code></pre>
+<p>Where: - B_accommodation = Σ (price_i × nights) for i ∈
+accommodations - B_transport = Σ (cost_j) for j ∈ transport_modes -
+B_food = Σ (daily_food_cost × days) - B_miscellaneous = buffer_margin ×
+B_total</p>
+<p>The calculator tool evaluates mathematical expressions using Python’s
+<code>eval()</code> function:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate(operation):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">eval</span>(operation)</span></code></pre></div>
+<p>This allows for complex budget calculations such as: -
+<code>200*7</code> (hotel cost × 7 nights) - <code>5000/2*10</code>
+(currency conversion and multiplication)</p>
+<h3 id="information-retrieval-and-ranking">2. Information Retrieval and
+Ranking</h3>
+<p>The SearchTools implements a <strong>top-k retrieval
+algorithm</strong>:</p>
+<pre><code>R = search(query)
+S = sort(R, relevance_score)
+return S[0:k]  where k = 4</code></pre>
+<p><strong>Parameters:</strong> - k = 4 (top_result_to_return) - Query
+space Q ⊆ ℝ^n (n-dimensional feature space) - Relevance function: rel: Q
+× D → [0,1] where D is the document space</p>
+<p><strong>Algorithm Complexity:</strong> - Time: O(n log n) for sorting
+n results - Space: O(k) for storing top k results</p>
+<h3 id="content-chunking-algorithm">3. Content Chunking Algorithm</h3>
+<p>The BrowserTools implements a <strong>fixed-size chunking
+algorithm</strong> for processing large web content:</p>
+<pre><code>C = content
+chunk_size = 8000 characters
+n_chunks = ⌈|C| / chunk_size⌉
+
+chunks = [C[i:chunk_size] for i in range(0, |C|, chunk_size)]</code></pre>
+<p><strong>Mathematical Properties:</strong> - For content of length L,
+number of chunks = ⌈L/8000⌉ - Chunk i spans indices: [i×8000,
+min((i+1)×8000, L)) - Union of all chunks = C (partition property) -
+Intersection of any two chunks = ∅ (disjoint property)</p>
+<p><strong>Complexity:</strong> - Time: O(L) to partition content -
+Space: O(L) to store all chunks</p>
+<h3 id="multi-agent-task-scheduling">4. Multi-Agent Task Scheduling</h3>
+<p>The CrewAI framework uses a <strong>task scheduling
+algorithm</strong>:</p>
+<p><strong>Task Execution Model:</strong></p>
+<pre><code>For each task T in [T₁, T₂, T₃]:
+    while not T.is_complete():
+        T.execute()
+        if T.requires_tool():
+            tool_result = T.tool(T.current_state)
+            T.update_state(tool_result)</code></pre>
+<p><strong>State Transition Function:</strong></p>
+<pre><code>δ: S × A → S&#39;</code></pre>
+<p>Where: - S = current state of the task - A = action (tool execution
+or LLM generation) - S’ = new state after action</p>
+<p><strong>Dependency Satisfaction:</strong></p>
+<pre><code>ready(T_i) = ∀ (T_j, T_i) ∈ E: T_j.is_complete()</code></pre>
+<h3 id="agent-selection-logic">5. Agent Selection Logic</h3>
+<p>The system uses <strong>conditional logic</strong> for LLM provider
+selection:</p>
+<pre><code>LLM = f(API_keys) where:
+f(keys) = 
+    &#39;gemini/gemini-2.0-flash&#39; if GOOGLE_API_KEY ∈ keys
+    &#39;gpt-3.5-turbo&#39; if OPENAI_API_KEY ∈ keys
+    None otherwise</code></pre>
+<p>This is a <strong>piecewise function</strong> defined over the API
+key space.</p>
+<h3 id="fallback-planning-algorithm">6. Fallback Planning Algorithm</h3>
+<p>When LLM is unavailable, the system uses a <strong>deterministic
+fallback plan</strong>:</p>
+<pre><code>Fallback(origin, city, date, interests) → Plan</code></pre>
+<p>The fallback plan is a <strong>static mapping</strong>:</p>
+<pre><code>P_fallback = {
+    day_1: &quot;Arrival and historic district walk&quot;,
+    day_2: &quot;University area exploration&quot;,
+    day_3: &quot;Academic neighborhoods and libraries&quot;,
+    day_4: &quot;Accommodation and commute analysis&quot;,
+    day_5: &quot;Museums and cultural landmarks&quot;,
+    day_6: &quot;Student services and practical essentials&quot;,
+    day_7: &quot;Flexible follow-up day&quot;
+}</code></pre>
+<p>This represents a <strong>constant-time lookup</strong> O(1) for the
+plan structure.</p>
+<h2 id="probability-and-uncertainty">Probability and Uncertainty</h2>
+<h3 id="api-connection-verification">API Connection Verification</h3>
+<p>The <code>verify_gemini_connection</code> function represents a
+<strong>probabilistic success model</strong>:</p>
+<pre><code>P(success) = P(API_key_valid) × P(network_available) × P(model_responsive)</code></pre>
+<p>The verification is modeled as a <strong>Bernoulli
+trial</strong>:</p>
+<pre><code>X ~ Bernoulli(p) where:
+X = 1 if connection successful
+X = 0 if connection fails</code></pre>
+<h3 id="error-handling">Error Handling</h3>
+<p>The system uses <strong>exception handling</strong> to manage
+uncertainty:</p>
+<pre><code>try:
+    result = crew.kickoff()
+except Exception as error:
+    return fallback_plan(...)</code></pre>
+<p>This can be modeled as:</p>
+<pre><code>Result = {
+    crew.kickoff() with probability p_success
+    fallback_plan() with probability (1 - p_success)
+}</code></pre>
+<h2 id="information-flow">Information Flow</h2>
+<h3 id="data-pipeline">Data Pipeline</h3>
+<p>The information flow through the system:</p>
+<pre><code>Input: I = {origin, cities, date_range, interests}
+
+Output: O = TripCrew.run(I)
+
+Where:
+O = A₃(T₃(A₂(T₂(A₁(T₁(I))))))</code></pre>
+<p>This represents a <strong>composition of functions</strong>:</p>
+<pre><code>O = f₃ ∘ f₂ ∘ f₁(I)</code></pre>
+<h3 id="tool-composition">Tool Composition</h3>
+<p>Each agent has access to a set of tools:</p>
+<pre><code>Tools(A₁) = {search, browser}
+Tools(A₂) = {search, browser}
+Tools(A₃) = {search, browser, calculator}</code></pre>
+<p>The tool execution follows a <strong>functional composition</strong>
+pattern:</p>
+<pre><code>tool_result = tool₁ ∘ tool₂ ∘ ... ∘ tool_n(input)</code></pre>
+<h2 id="algorithmic-complexity-analysis">Algorithmic Complexity
+Analysis</h2>
+<h3 id="overall-system-complexity">Overall System Complexity</h3>
+<p>Let: - n = number of search results per query - k = top results
+returned (k = 4) - L = total content length scraped - c = chunk size (c
+= 8000) - m = number of chunks = ⌈L/c⌉</p>
+<p><strong>Time Complexity:</strong> - Search: O(n log n) for sorting -
+Scraping: O(L) for content retrieval - Chunking: O(L) for partitioning -
+Summarization: O(m × t) where t = LLM inference time per chunk - Total:
+O(n log n + L + m × t)</p>
+<p><strong>Space Complexity:</strong> - O(k) for search results - O(L)
+for scraped content - O(L) for chunks - Total: O(L)</p>
+<h2 id="mathematical-properties">Mathematical Properties</h2>
+<h3 id="correctness">Correctness</h3>
+<p><strong>Invariant:</strong> Task dependencies are always satisfied
+before execution - Proof: The DAG structure and sequential execution
+ensure T₂ only runs after T₁ completes, and T₃ only after T₂
+completes.</p>
+<p><strong>Termination:</strong> The system always terminates - Proof:
+The task graph is finite and acyclic, with no loops. Each task either
+succeeds or triggers fallback, both of which are terminal states.</p>
+<h3 id="optimality">Optimality</h3>
+<p>The system aims for <strong>Pareto optimality</strong> in trip
+planning: - Maximize: attractions visited, cultural experiences,
+practical utility - Minimize: cost, travel time, complexity</p>
+<p>The multi-agent approach allows <strong>specialization</strong>: - A₁
+optimizes city selection - A₂ optimizes local knowledge - A₃ optimizes
+itinerary and budget</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Trip-Planner-Crew system combines several mathematical
+concepts:</p>
+<ol type="1">
+<li><strong>Graph Theory</strong> - DAG-based task dependencies</li>
+<li><strong>Optimization</strong> - Budget and itinerary
+optimization</li>
+<li><strong>Information Retrieval</strong> - Top-k search
+algorithms</li>
+<li><strong>Algorithm Design</strong> - Chunking, sorting, and
+sequential processing</li>
+<li><strong>Probability</strong> - Success/failure modeling for API
+connections</li>
+<li><strong>Functional Composition</strong> - Multi-agent information
+flow</li>
+</ol>
+<p>The mathematical foundation ensures the system is correct,
+terminates, and provides optimal trip planning solutions within the
+constraints of available data and computational resources.</p>
+</body>
+</html>
