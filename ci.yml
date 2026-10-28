@@ -1,0 +1,35 @@
+name: CI with Agent Triage
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        id: run_tests
+        run: npm test
+        continue-on-error: true
+
+      # This runs only if the tests fail
+      - name: Autonomous Failure Triage
+        if: steps.run_tests.outcome == 'failure'
+        run: |
+          echo "Tests failed! Inserting agent triage script here..."
+          # Replace this with your actual agent script call, e.g.:
+          # python3 scripts/agent_triage.py
