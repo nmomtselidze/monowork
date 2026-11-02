@@ -1,0 +1,10 @@
+Order #12345 placed by customer john@example.com
+Order #12346 payment confirmed
+Order #12345 shipped via UPS tracking 1Z999AA10123456784
+Order #12347 returned by customer
+Order #12348 delivered successfully
+Inventory alert: Product SKU-001 low stock (5 remaining)
+New customer registration: jane@example.com
+Promo code SUMMER20 applied to order #12349
+Review submitted: 5 stars for Product #54321
+Refund processed for order #12350 amount $45.99

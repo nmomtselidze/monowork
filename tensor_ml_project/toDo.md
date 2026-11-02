@@ -9,6 +9,7 @@ which pip
 # Output should be: /home/user/.venvs/tensor_ml/bin/pip
 
 # 4. Install your project requirements
+cd /media/user/dsk64/monowork/tensor_ml_project/
 pip install -r requirements.txt
 
 # 5. Run  examples/basic_usage.py
