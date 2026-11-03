@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pubsub-gcp-client
+  labels:
+    app: pubsub-gcp-client
+spec:
+  containers:
+    - name: client
+      image: gcr.io/google.com/cloudsdktool/google-cloud-cli:stable
+      command:
+        - /bin/sh
+        - -c
+        - >-
+          gcloud auth activate-service-account
+          --key-file="${GOOGLE_APPLICATION_CREDENTIALS}"
+          --project="${PUBSUB_PROJECT_ID}"
+          --quiet &&
+          sleep infinity
+      env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /var/secrets/google/credentials.json
+        - name: PUBSUB_PROJECT_ID
+          valueFrom:
+            configMapKeyRef:
+              name: pubsub-gcp-config
+              key: project-id
+      volumeMounts:
+        - name: gcp-credentials
+          mountPath: /var/secrets/google
+          readOnly: true
+  volumes:
+    - name: gcp-credentials
+      secret:
+        secretName: gcp-pubsub-credentials
+        items:
+          - key: credentials.json
+            path: credentials.json

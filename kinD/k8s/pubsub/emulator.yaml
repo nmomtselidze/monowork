@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pubsub-emulator
+  labels:
+    app: pubsub-emulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pubsub-emulator
+  template:
+    metadata:
+      labels:
+        app: pubsub-emulator
+    spec:
+      containers:
+        - name: pubsub-emulator
+          image: gcr.io/google.com/cloudsdktool/google-cloud-cli:emulators
+          command:
+            - gcloud
+          args:
+            - beta
+            - emulators
+            - pubsub
+            - start
+            - --host-port=0.0.0.0:8085
+            - --project=kind-pubsub
+          ports:
+            - name: pubsub
+              containerPort: 8085
+              protocol: TCP
+          readinessProbe:
+            tcpSocket:
+              port: pubsub
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: pubsub
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pubsub-emulator
+spec:
+  selector:
+    app: pubsub-emulator
+  ports:
+    - name: pubsub
+      port: 8085
+      targetPort: pubsub
+      protocol: TCP

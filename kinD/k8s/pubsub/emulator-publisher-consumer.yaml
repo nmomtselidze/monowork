@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pubsub-publisher
+  labels:
+    app: pubsub-publisher
+spec:
+  containers:
+    - name: publisher
+      image: curlimages/curl:8.12.1
+      command:
+        - /bin/sh
+        - -c
+        - sleep infinity
+      env:
+        - name: PUBSUB_EMULATOR_HOST
+          value: pubsub-emulator:8085
+        - name: PUBSUB_PROJECT_ID
+          value: kind-pubsub
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pubsub-consumer
+  labels:
+    app: pubsub-consumer
+spec:
+  containers:
+    - name: consumer
+      image: curlimages/curl:8.12.1
+      command:
+        - /bin/sh
+        - -c
+        - sleep infinity
+      env:
+        - name: PUBSUB_EMULATOR_HOST
+          value: pubsub-emulator:8085
+        - name: PUBSUB_PROJECT_ID
+          value: kind-pubsub
