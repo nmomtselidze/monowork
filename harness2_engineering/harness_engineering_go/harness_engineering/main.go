@@ -83,14 +83,14 @@ func run() error {
 	if err != nil {
 		return fmt.Errorf("send Gemini request: %w", err)
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	responseBody, err := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
 	if err != nil {
 		return fmt.Errorf("read Gemini response: %w", err)
 	}
 	if resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusMultipleChoices {
-		return fmt.Errorf("Gemini API returned %s: %s", resp.Status, strings.TrimSpace(string(responseBody)))
+		return fmt.Errorf("gemini API returned %s: %s", resp.Status, strings.TrimSpace(string(responseBody)))
 	}
 
 	var result generateContentResponse

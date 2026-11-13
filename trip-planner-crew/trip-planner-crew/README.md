@@ -1,11 +1,11 @@
 === To Run===============>
-cd /media/user/dsk64/monowork/trip-planner-crew
+cd /media/user/dsk64/monowork/trip-planner-crew/trip-planner-crew
 
 # Set the venv path on your primary Linux drive
 export UV_PROJECT_ENVIRONMENT="$HOME/.venvs/trip-planner-crew"
 
 uv --version 
-    uv 0.12.17
+    uv 0.12.23
 
 # Add your dependencies
 uv add crewai langchain langchain-google-genai google-generativeai python-dotenv litellm unstructured
@@ -32,7 +32,7 @@ https://google.github.io/adk-docs/get-started/quickstart/
 =================================================================================================================================================================
 
 Welcome to Trip Planner Crew
-From where will you be traveling from? Tbilisi What are the cities options you are interested in visiting? Madrid What is the date range you are interested in traveling? 1.09.2026 What are some of your high level interests and hobbies? Study in Madrid universiti
+From where will you be traveling from? Tbilisi What are the cities options you are interested in visiting? Madrid What is the date range you are interested in traveling? 1.09.2026 What are some of your high level interests and hobbies? Study in Madrid university
 
 [System] Verifying connection and checking location: Madrid... [System] API Verified. Landmark found: The Royal Palace of Madrid.
 
@@ -52,7 +52,7 @@ Trip Summary
 Origin: Tbilisi
 Destination: Madrid
 Date Range: 1.09.2026
-Interests: Study in Madrid universiti
+Interests: Study in Madrid university
 Suggested 7-Day Outline
 Day 1: Arrival, settle near the city center, and take an evening walk around the main historic district. Day 2: Visit the main university area, identify campus buildings, admissions offices, and nearby study-friendly cafes. Day 3: Explore major academic neighborhoods, libraries, and public transport routes between housing and university zones. Day 4: Review accommodation options, estimate commute times, and shortlist affordable food spots near the university. Day 5: Spend the day in museums, public plazas, and cultural landmarks to understand the city beyond academics. Day 6: Compare student services, co-working or library spaces, and practical essentials such as supermarkets and pharmacies. Day 7: Keep a flexible day for follow-up campus visits, paperwork, or meeting student support offices before departure.
 

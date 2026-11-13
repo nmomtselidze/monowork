@@ -64,7 +64,7 @@ func (h *ConsumerHandler) ConsumeClaim(session sarama.ConsumerGroupSession, clai
 func NewConsumer(brokers []string, topic, groupID string) (*Consumer, error) {
 	config := sarama.NewConfig()
 	config.Version = sarama.V2_5_0_0
-	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategyRoundRobin
+	config.Consumer.Group.Rebalance.Strategy = sarama.NewBalanceStrategyRoundRobin()
 	config.Consumer.Offsets.Initial = sarama.OffsetNewest
 
 	consumer, err := sarama.NewConsumerGroup(brokers, groupID, config)

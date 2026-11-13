@@ -299,27 +299,22 @@ func (a *DeployAgent) Execute(ctx context.Context, input interface{}) (interface
 
 	// Handle both single test result and multiple test results
 	var allTestsPassed bool
-	var testResults []*TestResult
 
 	switch v := input.(type) {
 	case *TestResult:
-		testResults = []*TestResult{v}
 		allTestsPassed = v.Success
 	case []*TestResult:
-		testResults = v
 		allTestsPassed = true
-		for _, tr := range testResults {
+		for _, tr := range v {
 			if !tr.Success {
 				allTestsPassed = false
 				break
 			}
 		}
 	case []interface{}:
-		testResults = make([]*TestResult, 0)
 		allTestsPassed = true
 		for _, item := range v {
 			if tr, ok := item.(*TestResult); ok {
-				testResults = append(testResults, tr)
 				if !tr.Success {
 					allTestsPassed = false
 				}

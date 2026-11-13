@@ -1,0 +1,18 @@
+version: "2"
+
+linters:
+  settings:
+    staticcheck:
+      checks:
+        - "all"
+        - "-QF1008" # Allow explicit embedded field selectors
+        - "-QF1012" # Allow WriteString(fmt.Sprintf(...))
+        - "-ST1000" # Do not require package comments on every package
+        - "-ST1020" # Do not enforce doc comment prefix on exported functions/methods
+        - "-ST1021" # Do not enforce doc comment prefix on exported types
+
+  exclusions:
+    rules:
+      - path: '(_test\.go|(^|/)examples/)'
+        linters:
+          - errcheck

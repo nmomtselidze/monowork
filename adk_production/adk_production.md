@@ -4,7 +4,7 @@ https://adk.dev/get-started/python/
 
 source .venv/bin/activate
 
-cd /media/user/dsk64/Multi_ADK/adk_production/my_agent
+cd /media/user/dsk64/Multi_ADK/adk_production/
 cd /mnt/usb-Seagate_BUP_Slim_BL_NA9DEHY2-0:0-part1/pendrive/01_Projects/adk_production
 
 cd my_agent && go test ./..
