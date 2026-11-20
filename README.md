@@ -2,7 +2,6 @@
 
 | Project Name | Description | Technology |Purpose/Features |
 | :--- | :--- | :---: | :--- |
-<<<<<<< HEAD
 | [nexus](https://github.com/nmomtselidze/monowork/tree/main/nexus) | Multi-Agent Graph System | Go, DAGs | DAG-based workflow orchestration for CI/CD, ML pipelines and ETL.|
 | [tensor_ml_project](https://github.com/nmomtselidze/monowork/tree/main/tensor_ml_project) | Production-ready ML system | Python, PyTorch, Transformers | Advanced tensor operations |
 | [harness2_engineering](https://github.com/nmomtselidze/monowork/tree/main/harness2_engineering)| Gemini command-line implementations | Go, Rust, Gemini API | AI/ML integration and API development.|
@@ -25,5 +24,4 @@ https://gemini.google.com/app/a81cae8dd02af2cf?utm_source=app_launcher&utm_mediu
 | [adk_production](https://github.com/nmomtselidze/monowork/tree/code/adk_production) | Agent Development Kit projects | Python, Go, ADK | Building intelligent agents with Python and Go.|
 | [ci / cd](https://github.com/nmomtselidze/monowork/tree/code/go-cicd-lab) | Go monorepo CI pipeline | GitHub Actions, Go, golangci-lint | 4-module matrix, lint-test-build gates |
 
->>>>>>> origin/main
 
